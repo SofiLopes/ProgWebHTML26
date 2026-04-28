@@ -1,0 +1,290 @@
+/* IMPORTA FONTES DO GOOGLE: Orbitron e Poppins */
+   @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@300;400;600;700&display=swap');
+
+   /* RESET GERAL:
+      remove: margens e espaçamentos automáticos, calcula largura com borda inclusa e scroll suave ao clicar em links internos */
+   *{
+       margin:0;
+       padding:0;
+       box-sizing:border-box;
+       scroll-behavior:smooth;
+   }
+   
+   /* BODY = corpo inteiro da página */
+   body{
+   
+       font-family:'Poppins', Arial, Helvetica, sans-serif; /* define fonte principal */
+       background:
+       radial-gradient(circle at top, #7b2cff 0%, #1a0033 25%, #050505 65%);  /* fundo em degradê circular */
+       color:white;        /* cor padrão do texto */   
+       min-height:100vh;        /* altura mínima = tela inteira */
+       overflow-x:hidden;       /* evita rolagem lateral */
+   }
+   
+   body::before{ /* CRIA EFEITO DE PONTOS NO FUNDO */
+   
+       content:"";        /* necessário para pseudo-elemento aparecer */   
+       position:fixed;    /* fixa no fundo da tela */
+       top:0;
+       left:0;
+       width:100%; /* ocupa tela toda */
+       height:100%;
+       background-image:        /* desenha bolinhas pequenas */
+       radial-gradient(#ffffff22 1px, transparent 1px);
+       background-size:25px 25px;        /* espaçamento entre bolinhas */
+       z-index:-1;        /* manda para trás */
+       opacity:0.4;        /* transparência */
+   }
+   
+   /* HERO = TOPO DA PÁGINA */
+   .hero{   
+       position:relative;        /* referência para elementos internos absolutos */   
+       text-align:center;        /* centraliza texto */
+       padding:140px 20px 90px;  /* espaço interno superior laterais inferior */
+       min-height:100vh;        /* altura mínima da tela inteira */
+       background-image: url("CAPAGamer.jpg");        /* imagem de fundo */
+       background-size: cover;        /* imagem cobre toda área */
+       background-position: center;     /* centraliza imagem */
+       background-repeat: no-repeat;    /* impede repetição */
+       display: flex;                   /* usa flexbox */   
+       justify-content: center;         /* centraliza horizontalmente */
+       align-items: center;             /* centraliza verticalmente */
+       flex-direction: column;          /* organiza em coluna */
+   }
+   
+   /* TÍTULO PRINCIPAL */
+   .hero h1{
+       font-size: 60px;           /* tamanho grande */
+       margin-bottom: 15px;       /* espaço abaixo */
+       text-shadow: 0 0 15px #b86bff;        /* brilho roxo */
+   }
+   /*Subtítulo*/
+   .subtitulo{
+    font-size:28px;
+    color:#ddd;
+    margin-top:10px;
+    transform: translateY(-40px);
+}
+   
+   /* TEXTO NEON */
+   .texto-neon{
+
+       font-family:'Orbitron', sans-serif;        /* fonte futurista */
+       font-size:55px;        /* tamanho */
+       color:#ff00ff;       /* cor rosa */
+       text-align:center;     /* centraliza */
+       text-shadow:           /* brilho neon */
+       0 0 5px #ff00ff,
+       0 0 10px #ff00ff,
+       0 0 20px #ff00ff,
+       0 0 40px #ff00ff;
+       animation:brilho 1.6s infinite alternate;        /* anima brilho */
+   }
+   
+   
+   /* ANIMAÇÃO NEON */
+   @keyframes brilho{
+       from{
+           opacity:0.85;
+       }
+   
+       to{
+           opacity:1;
+   
+           text-shadow:
+           0 0 8px #ff00ff,
+           0 0 18px #ff00ff,
+           0 0 35px #ff00ff,
+           0 0 60px #ff00ff;
+       }
+   }
+   
+   
+   /* BOTÕES */
+   .btn,
+   .botao{
+   
+       display:inline-block;        /* permite padding e tamanho */
+       padding:14px 28px;        /* espaço interno */
+       background:linear-gradient(45deg,#7b2cff,#00ffee);        /* fundo degradê */
+       color:black;             /* texto preto */
+       font-weight:bold;          /* negrito */
+       text-decoration:none;      /* remove sublinhado */
+       border-radius:30px;        /* bordas arredondadas */
+       transition:0.3s;           /* animação suave */
+       box-shadow:0 0 18px #7b2cff;        /* brilho */
+   }
+   
+   /* HOVER DO BOTÃO */
+   .btn:hover,
+   .botao:hover{
+   
+       transform:scale(1.07);        /* aumenta tamanho */
+       box-shadow:0 0 25px #00ffee;        /* muda brilho */
+   }
+
+   /* ÁREA DOS CARDS */
+   .cards{
+   
+       width:90%;
+       max-width:1300px;
+       margin:auto;        /* centraliza */
+       display:grid;        /* grid responsivo */
+       grid-template-columns:repeat(auto-fit,minmax(250px,1fr));        /* colunas automáticas */
+       gap:28px;        /* espaço entre cards */
+       padding:30px 0 60px;
+   }
+   
+   
+   /* CARD INDIVIDUAL */
+   .card{
+   
+       background:rgba(255,255,255,0.05);        /* fundo transparente */
+       border:1px solid rgba(255,255,255,0.08);        /* borda leve */
+       border-radius:22px;
+       padding:35px 25px;
+       text-decoration:none;
+       color:white;
+       box-shadow:0 0 20px rgba(123,44,255,0.35);
+       transition:0.35s ease;
+       backdrop-filter:blur(10px);        /* efeito vidro */
+       position:relative;
+       overflow:hidden;
+   }
+   
+   
+   /* BRILHO PASSANDO NO CARD */
+   .card::before{
+   
+       content:"";
+       position:absolute;
+       top:0;
+       left:-100%;
+       width:100%;
+       height:100%;
+       background:linear-gradient(
+           120deg,
+           transparent,
+           rgba(255,255,255,0.12),
+           transparent
+       );
+       transition:0.7s;
+   }
+   
+   
+   /* ANIMAÇÃO DO BRILHO */
+   .card:hover::before{
+       left:100%;
+   }
+   /* EMOJI */
+   .card .emoji{
+       font-size:42px;
+       display:block;
+       margin-bottom:18px;
+   }
+   /* TÍTULO DO CARD */
+   .card h2{
+       color:#00ffee;
+       margin-bottom:14px;
+       font-size:28px;
+   }
+   /* TEXTO CARD */
+   .card p{
+       color:#ddd;
+       line-height:1.6;
+       font-size:16px;
+   }
+   
+   /* HOVER CARD */
+   .card:hover{
+       transform:translateY(-10px) scale(1.03);
+       box-shadow:0 0 30px rgba(184,107,255,0.85);
+       border-color:#b86bff;
+   }
+   
+   /* SEÇÕES GERAIS */
+   section,
+   .sobre{
+   
+       width:90%;
+       max-width:900px;
+       margin:30px auto 60px;
+       text-align:center;
+       background:rgba(255,255,255,0.04);
+       padding:35px;
+       border-radius:20px;
+       border:1px solid rgba(255,255,255,0.08);
+       box-shadow:0 0 15px rgba(0,255,255,0.15);
+   }
+   
+   /* TÍTULOS DAS SEÇÕES */
+   section h2,
+   .sobre h2{
+       font-size:32px;
+       margin-bottom:15px;
+       color:#00ffee;
+   }
+
+   /* PARÁGRAFOS */
+   section p,
+   .sobre p{
+       color:#ddd;
+       line-height:1.7;
+       font-size:18px;
+       margin-bottom:20px;
+   }
+   
+   /* TODAS IMAGENS */
+   img{
+   
+       display:block;
+       margin:25px auto;
+       width:320px;
+       max-width:90%;
+       border-radius:15px;
+       box-shadow:0 0 20px rgba(123,44,255,0.6);
+       transition:0.3s;
+   }
+   
+   /* HOVER IMAGEM */
+   img:hover{
+       transform:scale(1.04);
+       box-shadow:0 0 28px #00ffee;
+   }
+   
+   /* RODAPÉ */
+   footer{
+       text-align:center;
+       padding:30px 20px;
+       color:#aaa;
+       border-top:1px solid rgba(255,255,255,0.08);
+       background:rgba(0,0,0,0.35);
+   }
+
+   /* RESPONSIVO */
+   @media(max-width:768px){   
+   .hero h1{
+       font-size:42px;
+   }
+
+   .hero p{
+       font-size:18px;
+   }
+   
+   .texto-neon{
+       font-size:38px;
+   }
+   
+   .card h2{
+       font-size:24px;
+   }   
+   section h2,
+   .sobre h2{
+       font-size:26px;
+   }
+   
+   img{
+       width:90%;
+   }
+   
+   }
