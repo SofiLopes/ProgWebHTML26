@@ -36,60 +36,6 @@
        opacity:0.4;        /* transparência */
    }
    
- 
-   /* TOPO FIXO DO SITE */
-    .topo-site {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        padding: 14px 30px;
-        background: linear-gradient(
-            to right,
-            rgba(10, 0, 30, 0.95),
-            rgba(60, 0, 120, 0.9),
-            rgba(123, 44, 255, 0.8)
-        );
-
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid rgba(255,255,255,0.12);
-        z-index: 1000;
-    }
-
-    .marca {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        text-decoration: none;
-    }
-
-    .marca img {
-        width: 48px;
-        height: 48px;
-        object-fit: cover;
-        border-radius: 50%;
-        margin: 0;
-        box-shadow: 0 0 12px #00ffee;
-    }
-
-    .marca span {
-        color: #00ffee;
-        font-size: 22px;
-        font-weight: 700;
-        text-shadow: 0 0 10px #7b2cff;
-    }
-
-    .menu a {
-    margin-left: 20px;
-    text-decoration: none;
-    color: #ddd; /* mais suave */
-    font-weight: 500;
-    transition: 0.3s;
-    }
-
-    .menu a:hover {
-        color: #00ffee;
-    }
 
     /* HERO = CAPA PRINCIPAL CODADA */
 
@@ -120,7 +66,40 @@
     justify-content: space-between;
     align-items: center;
 }
-    
+    .marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+    .marca img {
+        width: 48px;
+        height: 48px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin: 0;
+        box-shadow: 0 0 12px #00ffee;
+    }
+
+    .marca span {
+        color: #00ffee;
+        font-size: 22px;
+        font-weight: 700;
+        text-shadow: 0 0 10px #7b2cff;
+    }
+
+    .menu a {
+        margin-left: 20px;
+        text-decoration: none;
+        color: #ddd;
+        font-weight: 500;
+        transition: 0.3s;
+    }
+
+    .menu a:hover {
+        color: #00ffee;
+    }
     .hero {
     position: relative;
     z-index: 1;
@@ -304,37 +283,21 @@
    
    
    /* BOTÕES */
-   .btn,
-   .botao{
-   
-       display:inline-block;        /* permite padding e tamanho */
-       padding:14px 28px;        /* espaço interno */
-       background:linear-gradient(45deg,#7b2cff,#00ffee);        /* fundo degradê */
-       color:black;             /* texto preto */
-       font-weight:bold;          /* negrito */
-       text-decoration:none;      /* remove sublinhado */
-       border-radius:30px;        /* bordas arredondadas */
-       transition:0.3s;           /* animação suave */
-       box-shadow:0 0 18px #7b2cff;        /* brilho */
-   }
-   
-   /* HOVER DO BOTÃO */
-   .btn:hover,
-   .botao:hover{
-   
-       transform:scale(1.07);        /* aumenta tamanho */
-       box-shadow:0 0 25px #00ffee;        /* muda brilho */
-   }
+ .btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 30px;
 
-   /* BOTÃO ESPECÍFICO DO HERO */
-.btn-hero {
-    background: linear-gradient(
-        45deg,
-        #8a2be2,
-        #ff00ff
-    );
+    font-weight: bold;
+    text-decoration: none;
 
+    transition: 0.3s;
+    cursor: pointer;
+}
+.btn-primary {
+    background: linear-gradient(45deg, #8a2be2, #ff00ff);
     color: white;
+
     font-family: 'Orbitron', sans-serif;
     letter-spacing: 2px;
 
@@ -343,6 +306,45 @@
         0 0 20px rgba(255, 0, 255, 0.4);
 }
 
+.btn-primary:hover {
+    transform: scale(1.08);
+    box-shadow:
+        0 0 15px #ff00ff,
+        0 0 30px #ff00ff;
+}
+.btn-secondary {
+    background: linear-gradient(45deg, #7b2cff, #00ffee);
+    color: black;
+
+    box-shadow: 0 0 18px #7b2cff;
+}
+
+.btn-secondary:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 25px #00ffee;
+}
+.btn-video {
+    background: linear-gradient(45deg, #8a2be2, #ff00ff);
+    color: white;
+
+    font-family: 'Orbitron', sans-serif;
+
+    box-shadow:
+        0 0 10px rgba(255,0,255,0.45),
+        0 0 18px rgba(123,44,255,0.35);
+}
+
+.btn-video:hover {
+    box-shadow:
+        0 0 12px rgba(255,0,255,0.65),
+        0 0 25px rgba(123,44,255,0.5);
+}
+.btn-menu {
+    background: linear-gradient(45deg, #8a2be2, #ff00ff);
+    color: white;
+
+    font-family: 'Orbitron', sans-serif;
+}
 /* EFEITO AO PASSAR O MOUSE */
 .btn-hero:hover {
     transform: scale(1.08);
@@ -431,6 +433,38 @@
        border-color:#b86bff;
    }
    
+   /* PÁGINAS INTERNAS DOS CONSOLES */
+.pagina-console {
+    padding-top: 120px;
+    min-height: 100vh;
+}
+
+.cabecalho-console {
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto 20px;
+    text-align: center;
+    padding: 40px 20px;
+
+    background:
+        radial-gradient(circle at center, rgba(123,44,255,0.35), transparent 45%),
+        linear-gradient(135deg, rgba(37,0,57,0.95), rgba(16,0,24,0.95));
+
+    border-radius: 22px;
+    border: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 0 25px rgba(123,44,255,0.45);
+}
+
+.cabecalho-console h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 44px;
+    color: #ffffff;
+    letter-spacing: 2px;
+    text-shadow:
+        0 0 10px #d020ff,
+        0 0 25px #d020ff;
+}
+
    /* SEÇÕES GERAIS */
    section,
    .sobre{
@@ -464,23 +498,21 @@
    }
    
    /* TODAS IMAGENS */
-   img{
-   
-       display:block;
-       margin:25px auto;
-       width:320px;
-       max-width:90%;
-       border-radius:15px;
-       box-shadow:0 0 20px rgba(123,44,255,0.6);
-       transition:0.3s;
-   }
-   
-   /* HOVER IMAGEM */
-   img:hover{
-       transform:scale(1.04);
-       box-shadow:0 0 28px #00ffee;
-   }
-   
+    section img {
+        display:block;
+        margin:25px auto;
+        width:320px;
+        max-width:90%;
+        border-radius:15px;
+        box-shadow:0 0 20px rgba(123,44,255,0.6);
+        transition:0.3s;
+    }
+
+    section img:hover {
+        transform:scale(1.04);
+        box-shadow:0 0 28px #00ffee;
+    }
+    
    /* RODAPÉ */
    footer{
        text-align:center;
@@ -512,20 +544,35 @@
        font-size:26px;
    }
    
-  section img {
-    width: 90%;
-}
+    section img {
+        width: 90%;
+    }
 
-   .topo-site {
-    padding: 12px 18px;
-}
+    .topo-site {
+        padding: 12px 18px;
+    }
 
-.marca span {
-    font-size: 18px;
-}
+    .marca span {
+        font-size: 18px;
+    }
 
-.hero {
-    padding-top: 140px;
-}
-   
-   }
+    .hero {
+        padding-top: 140px;
+    }
+    .pagina-console {
+    padding-top: 100px;
+    }
+
+    .cabecalho-console {
+        padding: 30px 15px;
+    }
+
+    .cabecalho-console h1 {
+        font-size: 30px;
+    }
+
+    .menu {
+        display: none;
+    }
+    
+    }
