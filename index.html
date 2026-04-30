@@ -1,44 +1,59 @@
-<!-- Estrutura HTML-->>
+<!-- Estrutura HTML -->
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
+    <!-- Cabeçalho -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videogames Antigos</title>
 
-<!-- Cabeçalho-->>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Título 1-->>
-    <h1>🎮 Videogames Antigos</h1>
-    <p class="subtitulo">A Era de Ouro</p>
+    <!-- Design da Página -->
+    <link rel="stylesheet" href="style.css">
 
-<!-- Design da Página-->>
-<link rel="stylesheet" href="style.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+
+<header class="topo-site">
+    <div class="container-topo">
+
+        <a href="index.html" class="marca">
+            <img src="img/LOGOGamer.jpg" alt="Logo do projeto">
+            <span>🎮 Videogames Antigos</span>
+        </a>
+
+        <nav class="menu">
+            <a href="atari.html">Atari</a>
+            <a href="nes.html">NES</a>
+            <a href="mega.html">Mega Drive</a>
+            <a href="playstation.html">PlayStation</a>
+        </nav>
+
+    </div>
+</header>
+
 <header class="hero">
 
-    <!-- LOGO -->
-    <a href="index.html" class="logo">     <!-- LOGO clicável-->
-        <img src="LOGOGamer.jpg" alt="Logo Gamer">     <!-- mostra imagem LOGO -->
-    </a>
+    <div class="poeira-cosmica"></div>
 
-    <div class="overlay"></div>     <!-- ficar escuro-->
+    <div class="hero-content">
+        <p class="hero-subtitulo">A ERA DE OURO</p>
 
-    <div class="hero-content">     <!-- Agrupa texto principal da capa -->
-        <h1>🎮 Videogames Antigos</h1>     <!-- Título Principal do site -->
-        <p>Conheça os consoles clássicos que marcaram gerações gamers</p>     <!-- Texto explicativo -->
+        <h1>VIDEOGAMES</h1>
 
+        <p class="hero-descricao">
+            Explore curiosidades, análises e fatos épicos da era de ouro dos consoles
+        </p>
 
-        <a href="#cards" class="btn">Explorar Consoles</a>     <!-- Botão cards -->
-
+        <a href="#cards" class="btn btn-primary">RETROGAMING</a>
     </div>
 
 </header>
+
 
 <main>
 
